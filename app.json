@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Blog App",
-    "slug": "blog-app",
+    "name": "Recipe App (Recipedia)",
+    "slug": "recipe-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -26,7 +26,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.blog.brogrammers"
+      "package": "com.recipe.brogrammers"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
