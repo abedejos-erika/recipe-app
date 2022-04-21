@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, doc, setDoc, collection, addDoc, onSnapshot } from "firebase/firestore";
 import { getStorage, uploadBytes, getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
+import { getFirestore, doc, setDoc, collection, query, where, addDoc, onSnapshot } from "firebase/firestore";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, sendPasswordResetEmail } from "firebase/auth";
 
 const firebaseConfig = {
@@ -23,6 +23,8 @@ export {
   doc,
   ref,
   auth,
+  query,
+  where,
   addDoc,
   setDoc,
   signOut,

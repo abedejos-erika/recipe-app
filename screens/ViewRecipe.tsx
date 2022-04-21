@@ -17,11 +17,10 @@ export default function ViewRecipe({ navigation, route }: any) {
         <View style={styles.recipe}>
           <Text style={styles.title}>{recipe.title}</Text>
           <Text style={styles.desc}>{recipe.desc}</Text>
-
-          <TouchableOpacity onPress={() => Linking.openURL(recipe.link)} style={styles.button} activeOpacity={0.8}>
-            <Ionicons name="logo-youtube" size={50} color="white" />
-            <Text style={styles.buttonText}>Open Link</Text>
-          </TouchableOpacity>
+            <TouchableOpacity onPress={() => Linking.openURL(recipe.link)} style={styles.button} activeOpacity={0.8}>
+              <Ionicons name="logo-youtube" size={50} color="white" />
+              <Text style={styles.buttonText}>Open Link</Text>
+            </TouchableOpacity>
         </View>
       </ScrollView>
     </View>

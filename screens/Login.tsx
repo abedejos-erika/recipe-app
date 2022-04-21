@@ -17,6 +17,8 @@ export default function Login({ navigation }: any) {
       .then(async (user) => {
         await AsyncStorage.setItem("uid", user.user.uid);
         setLoad(false);
+        setEmail("")
+        setPassword("")
         navigation.push("Home");
       })
       .catch((error) => {

@@ -1,18 +1,25 @@
 import Header from "../components/Header";
+import { onSnapshot, db, doc, query, where, collection } from "../firebase";
 import React, { useEffect, useState } from "react";
-import { onSnapshot, db, collection } from "../firebase";
 import { StyleSheet, View, FlatList, Text, Image, TouchableOpacity } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function Home({ navigation }: any) {
   const [recipes, setRecipes] = useState<any[]>([]);
 
   useEffect(() => {
-    onSnapshot(collection(db, "recipes"), (snapshot) => {
+    getRecipes()
+  }, []);
+
+  async function getRecipes() {
+    const uid = await AsyncStorage.getItem("uid");
+    const q = query(collection(db, "recipes"), where("uid", "==", uid));
+    onSnapshot(q, (querySnapshot) => {
       const array: any = [];
-      snapshot.forEach((doc) => array.push({ ...doc.data(), id: doc.id }));
+      querySnapshot.forEach((doc) => array.push({ ...doc.data(), id: doc.id }));
       setRecipes(array);
     });
-  }, []);
+  }
 
   const ViewRecipe = (recipe: any) => {
     let value = JSON.stringify(recipe);

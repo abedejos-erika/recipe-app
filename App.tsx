@@ -7,7 +7,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <StatusBar />
+      <StatusBar   />
       <Navigation />
     </SafeAreaProvider>
   );
